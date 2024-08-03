@@ -14,6 +14,8 @@
 		069687782C5D0B99008066FF /* RectanglesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069687772C5D0B99008066FF /* RectanglesTests.swift */; };
 		069687822C5D0B99008066FF /* RectanglesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069687812C5D0B99008066FF /* RectanglesUITests.swift */; };
 		069687842C5D0B99008066FF /* RectanglesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069687832C5D0B99008066FF /* RectanglesUITestsLaunchTests.swift */; };
+		069687932C5D0E2E008066FF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069687922C5D0E2E008066FF /* ImagePicker.swift */; };
+		069687952C5D1439008066FF /* Rectangles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069687942C5D1439008066FF /* Rectangles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		0696877D2C5D0B99008066FF /* RectanglesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RectanglesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		069687812C5D0B99008066FF /* RectanglesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectanglesUITests.swift; sourceTree = "<group>"; };
 		069687832C5D0B99008066FF /* RectanglesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectanglesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		069687922C5D0E2E008066FF /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		069687942C5D1439008066FF /* Rectangles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +99,9 @@
 			isa = PBXGroup;
 			children = (
 				069687662C5D0B97008066FF /* RectanglesApp.swift */,
+				069687942C5D1439008066FF /* Rectangles.swift */,
 				069687682C5D0B97008066FF /* ContentView.swift */,
+				069687922C5D0E2E008066FF /* ImagePicker.swift */,
 				0696876A2C5D0B99008066FF /* Assets.xcassets */,
 				0696876C2C5D0B99008066FF /* Preview Content */,
 			);
@@ -257,8 +263,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				069687932C5D0E2E008066FF /* ImagePicker.swift in Sources */,
 				069687692C5D0B97008066FF /* ContentView.swift in Sources */,
 				069687672C5D0B97008066FF /* RectanglesApp.swift in Sources */,
+				069687952C5D1439008066FF /* Rectangles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
