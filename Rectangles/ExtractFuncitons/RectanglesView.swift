@@ -32,16 +32,17 @@ struct RectanglesView: View {
     
     func extractData() {
         let invoiceIDs = InvoiceExtractor.extractInvoiceNumber(from: image)
-        let issueDates = extractIssueDate(from: image)
+        let issueDates = extractDates(from: image)
         
         if let firstID = invoiceIDs.first {
             invoiceID = "\(firstID) (\(invoiceIDs.dropFirst().joined(separator: ", ")))"
             print("Found Invoice ID: \(invoiceID)")
         }
 
-        if let firstDate = issueDates.first {
-            issueDate = "\(firstDate) (\(issueDates.dropFirst().joined(separator: ", ")))"
-            print("Found Issue Date: \(issueDate)")
+        if !issueDates.isEmpty {
+            // Assuming issueDates is a dictionary
+            issueDate = issueDates.map { "\($0.key): \($0.value)" }.joined(separator: "\n ")
+            print("Found Issue Dates: \(issueDate)")
         }
     }
 }
