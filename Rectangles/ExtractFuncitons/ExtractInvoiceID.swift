@@ -55,9 +55,16 @@ struct InvoiceExtractor {
             for (candidate, initialScore, boundingBox) in invoiceNumberCandidates {
                 var score = initialScore
                 
-                // Elevate score if candidate is near "Invoice"
-                if let invoiceBox = invoiceBoundingBox, isCloseToInvoice(candidateBox: boundingBox, invoiceBox: invoiceBox, word: candidate) {
-                    score += 10  // Strong boost for proximity
+                if let invoiceBox = invoiceBoundingBox {
+                    // Check if the candidate is close to the word "Invoice"
+                    if isCloseToInvoice(candidateBox: boundingBox, invoiceBox: invoiceBox, word: candidate) {
+                        score += 10
+                    }
+                    
+                    // Check if the candidate is in the horizontal rectangle around "Invoice"
+                    if isInHorizontalRectangle(candidateBox: boundingBox, invoiceBox: invoiceBox, word: candidate) {
+                        score += 5
+                    }
                 }
                 
                 // Filter out words, dates, special-character-only, and apply further scoring
@@ -124,15 +131,14 @@ struct InvoiceExtractor {
         return regex.matches(in: text, options: [], range: NSRange(location: 0, length: text.utf16.count)).count > 0
     }
 
-
     // Helper function to check proximity to the word "INVOICE"
     static func isCloseToInvoice(candidateBox: CGRect, invoiceBox: CGRect, word: String) -> Bool {
         // Define the bounding box for the proximity check
         let proximityBox = CGRect(
-            x: invoiceBox.minX, // Start from the left side of "Invoice"
-            y: invoiceBox.minY, // Start from the top side of "Invoice"
-            width: invoiceBox.width * 3, // Extend the width by a certain multiplier (adjust as needed)
-            height: invoiceBox.height * 5 // Extend the height by a certain multiplier (adjust as needed)
+            x: invoiceBox.minX - 0.05, // Expand leftwards
+            y: invoiceBox.minY - 0.05, // Expand upwards
+            width: invoiceBox.width + 0.1, // Expand width
+            height: invoiceBox.height + 0.1 // Expand height
         )
         
         // Check if the candidate's bounding box intersects with the proximity box
@@ -147,5 +153,27 @@ struct InvoiceExtractor {
         
         return isClose
     }
-
+    
+    // Function to check if the candidate is in the horizontal rectangle
+    static func isInHorizontalRectangle(candidateBox: CGRect, invoiceBox: CGRect, word: String) -> Bool {
+        // Define the horizontal rectangle
+        let horizontalRectangle = CGRect(
+            x: 0, // Start from the left edge of the page
+            y: invoiceBox.minY - invoiceBox.height * 0.5, // Start from slightly above the "Invoice" box
+            width: 1.0, // Width of the entire page (normalized coordinate system)
+            height: invoiceBox.height * 2 // Height extending downwards
+        )
+        
+        // Check if the candidate's box intersects with the horizontal rectangle
+        let isInRectangle = horizontalRectangle.intersects(candidateBox)
+        
+        // Debug output to understand why candidates are considered in the rectangle
+        if isInRectangle {
+            print("YES \(word) is in horizontal rectangle: horizontalRectangle=\(horizontalRectangle), candidateBox=\(candidateBox)")
+        } else {
+            print("NO \(word) is in horizontal rectangle: horizontalRectangle=\(horizontalRectangle), candidateBox=\(candidateBox)")
+        }
+        
+        return isInRectangle
+    }
 }
