@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		068321B12C6E2472006D251A /* ExtractInvoiceID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068321B02C6E2472006D251A /* ExtractInvoiceID.swift */; };
+		068321B32C6E24B5006D251A /* ExtractIssueDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068321B22C6E24B5006D251A /* ExtractIssueDate.swift */; };
 		069687672C5D0B97008066FF /* RectanglesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069687662C5D0B97008066FF /* RectanglesApp.swift */; };
 		069687692C5D0B97008066FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069687682C5D0B97008066FF /* ContentView.swift */; };
 		0696876B2C5D0B99008066FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0696876A2C5D0B99008066FF /* Assets.xcassets */; };
@@ -15,7 +17,7 @@
 		069687822C5D0B99008066FF /* RectanglesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069687812C5D0B99008066FF /* RectanglesUITests.swift */; };
 		069687842C5D0B99008066FF /* RectanglesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069687832C5D0B99008066FF /* RectanglesUITestsLaunchTests.swift */; };
 		069687932C5D0E2E008066FF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069687922C5D0E2E008066FF /* ImagePicker.swift */; };
-		069687952C5D1439008066FF /* Rectangles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069687942C5D1439008066FF /* Rectangles.swift */; };
+		069687952C5D1439008066FF /* RectanglesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069687942C5D1439008066FF /* RectanglesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		068321B02C6E2472006D251A /* ExtractInvoiceID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractInvoiceID.swift; sourceTree = "<group>"; };
+		068321B22C6E24B5006D251A /* ExtractIssueDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractIssueDate.swift; sourceTree = "<group>"; };
 		069687632C5D0B97008066FF /* Rectangles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rectangles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		069687662C5D0B97008066FF /* RectanglesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectanglesApp.swift; sourceTree = "<group>"; };
 		069687682C5D0B97008066FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,7 +51,7 @@
 		069687812C5D0B99008066FF /* RectanglesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectanglesUITests.swift; sourceTree = "<group>"; };
 		069687832C5D0B99008066FF /* RectanglesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectanglesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		069687922C5D0E2E008066FF /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		069687942C5D1439008066FF /* Rectangles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangles.swift; sourceTree = "<group>"; };
+		069687942C5D1439008066FF /* RectanglesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectanglesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		068321B42C6E24E6006D251A /* ExtractFuncitons */ = {
+			isa = PBXGroup;
+			children = (
+				068321B22C6E24B5006D251A /* ExtractIssueDate.swift */,
+				069687942C5D1439008066FF /* RectanglesView.swift */,
+				068321B02C6E2472006D251A /* ExtractInvoiceID.swift */,
+			);
+			path = ExtractFuncitons;
+			sourceTree = "<group>";
+		};
 		0696875A2C5D0B97008066FF = {
 			isa = PBXGroup;
 			children = (
@@ -99,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				069687662C5D0B97008066FF /* RectanglesApp.swift */,
-				069687942C5D1439008066FF /* Rectangles.swift */,
+				068321B42C6E24E6006D251A /* ExtractFuncitons */,
 				069687682C5D0B97008066FF /* ContentView.swift */,
 				069687922C5D0E2E008066FF /* ImagePicker.swift */,
 				0696876A2C5D0B99008066FF /* Assets.xcassets */,
@@ -266,7 +280,9 @@
 				069687932C5D0E2E008066FF /* ImagePicker.swift in Sources */,
 				069687692C5D0B97008066FF /* ContentView.swift in Sources */,
 				069687672C5D0B97008066FF /* RectanglesApp.swift in Sources */,
-				069687952C5D1439008066FF /* Rectangles.swift in Sources */,
+				069687952C5D1439008066FF /* RectanglesView.swift in Sources */,
+				068321B12C6E2472006D251A /* ExtractInvoiceID.swift in Sources */,
+				068321B32C6E24B5006D251A /* ExtractIssueDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
