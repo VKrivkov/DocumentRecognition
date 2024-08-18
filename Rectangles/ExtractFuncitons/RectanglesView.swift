@@ -20,7 +20,7 @@ struct RectanglesView: View {
             }
 
             if !invoiceDates.isEmpty {
-                Text("Issue Dates: \(invoiceDates)")
+                Text("All Dates: \(invoiceDates)")
                     .font(.headline)
                     .padding(.top)
             }
