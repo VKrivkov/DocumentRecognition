@@ -4,7 +4,7 @@ import Vision
 struct RectanglesView: View {
     var image: UIImage
     @State private var invoiceID: String = ""
-    @State private var issueDate: String = ""
+    @State private var invoiceDates: String = ""
     
     var body: some View {
         VStack {
@@ -19,8 +19,8 @@ struct RectanglesView: View {
                     .padding(.top)
             }
 
-            if !issueDate.isEmpty {
-                Text("IssueDate: \(issueDate)")
+            if !invoiceDates.isEmpty {
+                Text("Issue Dates: \(invoiceDates)")
                     .font(.headline)
                     .padding(.top)
             }
@@ -40,9 +40,8 @@ struct RectanglesView: View {
         }
 
         if !issueDates.isEmpty {
-            // Assuming issueDates is a dictionary
-            issueDate = issueDates.map { "\($0.key): \($0.value)" }.joined(separator: "\n ")
-            print("Found Issue Dates: \(issueDate)")
+            invoiceDates = issueDates.joined(separator: "\n")
+            print("Found Dates: \(invoiceDates)")
         }
     }
 }
